@@ -1,10 +1,10 @@
 # Machine Learning on Microcontrollers: *Final Project*
 
 ## Face detection on ARM Cortex-M7 Microcontroller
-This project faces the challenge of deploying a face detection model to a microcontroller. The approach used takes inspiration from the famous ~MTCNN~ framework, highlighting its limitis for the deployment on highly resource constrained platforms. An alternative approach is proposed, that can run on such architecture with a good balance between accuracy and resource utilization. 
+This project faces the challenge of deploying a face detection model to a microcontroller. The approach used takes inspiration from the famous **MTCNN** framework, highlighting its limitis for the deployment on highly resource constrained platforms. An alternative approach is proposed, that can run on such architecture with a good balance between accuracy and resource utilization. 
 
 ### Dataset generation
-The dataset used to train the networks is generated from the popular ~WIDERface~ dataset, in a similar way as that described for the training of MTCNN networks. For every image of the dataset, a fixed number of *positive*, *negative* and *partial* samples are generated. This allows to collect a high number of training and validation samples, which for the results reported consists in 193k images and 74k valildation images.
+The dataset used to train the networks is generated from the popular **WIDERface** dataset, in a similar way as that described for the training of MTCNN networks. For every image of the dataset, a fixed number of *positive*, *negative* and *partial* samples are generated. This allows to collect a high number of training and validation samples, which for the results reported consists in 193k images and 74k valildation images.
 
 ### Network architecture
 The project compares two different Convolutional Neural Network architectures, called *rnet* and *onet*, as thir structure is inspired from networks in the MTCNN framework. The *onet* is a 
