@@ -9,6 +9,8 @@ The dataset used to train the networks is generated from the popular **WIDERface
 ### Network architecture
 The project compares two different CNN (Convolutional Neural Network) architectures, called *rnet* and *onet*, as thir structure is inspired from networks in the MTCNN framework. The *onet* is a CNN which takes 48x48x3 input images and produces a binary classification score and 4 bounding box regresssion offsets. Its implementation requires almost 500KB on the target microcontroller, resulting in a borderline saturation in terms of area usage. The *rnet* is instead a smaller network that optimizes memory usage and especially latency, with a peak inference throughput of 3 frames/s.
 
+![Alt text](img/rnet.png "rnet")
+![Alt text](img/onet.png "onet")
 
 
 ### Microcontroller
