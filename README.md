@@ -6,6 +6,8 @@ This project faces the challenge of deploying a face detection model to a microc
 ### Dataset generation
 The dataset used to train the networks is generated from the popular **WIDERface** dataset, in a similar way as that described for the training of MTCNN networks. For every image of the dataset, a fixed number of *positive*, *negative* and *partial* samples are generated. This allows to collect a high number of training and validation samples, which for the results reported consists in 193k images and 74k valildation images.
 
+![Alt text](img/widerface.png "dataset")
+
 ### Network architecture
 The project compares two different CNN (Convolutional Neural Network) architectures, called *rnet* and *onet*, as thir structure is inspired from networks in the MTCNN framework. The *onet* is a CNN which takes 48x48x3 input images and produces a binary classification score and 4 bounding box regresssion offsets. Its implementation requires almost 500KB on the target microcontroller, resulting in a borderline saturation in terms of area usage. The *rnet* is instead a smaller network that optimizes memory usage and especially latency, with a peak inference throughput of 3 frames/s.
 
