@@ -17,3 +17,9 @@ The project compares two different CNN (Convolutional Neural Network) architectu
 
 ### Microcontroller
 A STM32 Nucleo-144 board was used for the project, featuring a Cortex-M7 microcontroller with a 2MB flash and a 512KB RAM memories. The board was programmed through the STMCube IDE, which supports programming and configuration of many development boards from STM. The deployment of the networks is done through the support of Tensorflow Lite Micro, which provides a backend for the implementation of the most common neural network layers, optimized for different ARM architectures, through the usage of the CMSIS-NN library. An example of a possible program that runs the networks developed is provided in the cube_ide directory. A fixed size image (either 48x48x3 or 24x24x3) is loaded to the main memory of the microcontroller with serial communication through the USB-UART port of the board. Inference is then run for the image, and the output is transmitted back to the host, including the classification score and the bounding box regression values.
+
+### Results
+Both the implemented solutions achieve good results in terms of prediction accuracy and performance. Nevertheless, the *rnet* architecture has a much faster execution time (more than 3x faster) and a much lower impact in terms of memory usage (108KB vs 393KB only for the parameters, in the quantized version). Regarding accuracy, the onet has a higher accuracy of about 86%, while the rnet achieves an accuracy of 80%. However, after quantization the gap shrinks, as the onet accuracy reduces to 83%, while the rnet accuracy, thanks to the regularization effect of quantization, has a final accuracy of 81%.
+Some results are shown on the pictures below.
+
+![Alt text](img/images.png "results")
